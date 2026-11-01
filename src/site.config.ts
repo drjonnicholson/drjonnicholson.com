@@ -9,7 +9,7 @@ export const SITE: SiteConfig = {
   href: "https://www.drjonnicholson.com",
   author: "Jon Nicholson",
   dir: "ltr",
-  defaultSiteImage: "/img/social-preview.png",
+  defaultSiteImage: "/img/social-preview.webp",
 
   locale: {
     lang: "en-GB",
