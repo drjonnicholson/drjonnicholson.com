@@ -87,8 +87,8 @@ void test("subpost heading namespaces reset for every document", () => {
     fileURL: pathToFileURL("/content/blog/series/second.md"),
   })
 
-  assert.match(first.html, /id="repeated"/)
-  assert.match(first.html, /id="repeated-1"/)
-  assert.match(second.html, /id="repeated"/)
-  assert.doesNotMatch(second.html, /id="repeated-1"/)
+  assert.match(first.html, /id="first-repeated"/)
+  assert.match(first.html, /id="first-repeated-1"/)
+  assert.match(second.html, /id="second-repeated"/)
+  assert.doesNotMatch(second.html, /id="second-repeated-1"/)
 })
