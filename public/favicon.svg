@@ -1,23 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title id="title">My Scholar four-point star</title>
-  <style>
-    .background {
-      fill: #8878c3;
-      fill: oklch(0.6182 0.1121 292.61);
-    }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F7FF"/>
+      <stop offset="45%" stop-color="#8AD9FF"/>
+      <stop offset="100%" stop-color="#2FA6E8"/>
+    </linearGradient>
+  </defs>
 
-    .star {
-      fill: #bfafff;
-      fill: oklch(0.797 0.1121 292.61);
-    }
-  </style>
-  <rect class="background" width="512" height="512" rx="112"/>
-  <path
-    class="star"
-    d="M256 56C279 181 331 233 456 256 331 279 279 331 256 456 233 331 181 279 56 256 181 233 233 181 256 56Z"
-  />
-  <path
-    fill="#fff"
-    d="M256 166C266 222 290 246 346 256 290 266 266 290 256 346 246 290 222 266 166 256 222 246 246 222 256 166Z"
-  />
+  <rect width="512" height="512" fill="#020406"/>
+
+  <g opacity="0.08" stroke="#49b8ff">
+    <line x1="170" y1="0" x2="170" y2="512"/>
+    <line x1="256" y1="0" x2="256" y2="512"/>
+    <line x1="342" y1="0" x2="342" y2="512"/>
+  </g>
+
+  <text x="256"
+        y="296"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-size="420"
+        font-weight="900"
+        font-family="Inter, system-ui, sans-serif"
+        fill="url(#grad)">
+    J
+  </text>
 </svg>
