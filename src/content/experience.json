@@ -1,0 +1,132 @@
+[
+  {
+    "id": "hastings-direct-principal-architect",
+    "category": "career",
+    "title": "Principal Solution Architect (Digital)",
+    "org": "Hastings Direct",
+    "orgUrl": "https://www.hastingsdirect.com",
+    "startDate": "2023-08",
+    "location": "Bexhill, England",
+    "description": "Leads digital architecture for customer platforms, setting technology strategy, API direction and architecture guardrails while developing a team of architects."
+  },
+  {
+    "id": "hastings-direct-solution-architect",
+    "category": "career",
+    "title": "Solution Architect",
+    "org": "Hastings Direct",
+    "orgUrl": "https://www.hastingsdirect.com",
+    "startDate": "2019-10",
+    "endDate": "2023-08",
+    "location": "Bexhill, England",
+    "description": "Led architecture for digital claims transformation and established reusable platform capabilities, architecture practices and engineering standards."
+  },
+  {
+    "id": "assembly-community-brands",
+    "category": "career",
+    "title": "Full Stack Developer",
+    "org": "Assembly / Community Brands UK",
+    "orgUrl": "https://www.communitybrands.com",
+    "startDate": "2018-05",
+    "endDate": "2019-09",
+    "location": "Hastings, England",
+    "description": "Built integrations, APIs and customer-facing applications for education platforms using a shared data model across multiple products."
+  },
+  {
+    "id": "zinet-cto",
+    "category": "career",
+    "title": "Chief Technology Officer",
+    "org": "ZiNET Data Solutions",
+    "orgUrl": "https://www.zinet.co.uk",
+    "startDate": "2016-08",
+    "endDate": "2018-05",
+    "location": "Hastings, England",
+    "description": "Led technical strategy, software development and a small engineering team while contributing to education data standards and research."
+  },
+  {
+    "id": "brighton-senior-lecturer",
+    "category": "career",
+    "title": "Senior Lecturer in Computer Science",
+    "org": "University of Brighton",
+    "orgUrl": "https://www.brighton.ac.uk",
+    "startDate": "2014-02",
+    "endDate": "2016-08",
+    "location": "Brighton, England",
+    "description": "Led teaching, curriculum development and industry engagement while supporting students and building links with the local technology community."
+  },
+  {
+    "id": "brighton-lecturer",
+    "category": "career",
+    "title": "Lecturer in Computer Science",
+    "org": "University of Brighton",
+    "orgUrl": "https://www.brighton.ac.uk",
+    "startDate": "2011-09",
+    "endDate": "2014-02",
+    "location": "Brighton, England",
+    "description": "Taught computer science, led degree development and contributed research supporting the University's REF submission."
+  },
+  {
+    "id": "schoolsict-consultant",
+    "category": "career",
+    "title": "Consultant Developer",
+    "org": "SchoolsICT",
+    "startDate": "2010-12",
+    "endDate": "2011-09",
+    "location": "Hastings, England",
+    "description": "Designed and built an integration platform for secure education data exchange using Access 4 Learning standards."
+  },
+  {
+    "id": "essex-gta",
+    "category": "career",
+    "title": "Graduate Teaching Assistant",
+    "org": "University of Essex",
+    "orgUrl": "https://www.essex.ac.uk",
+    "startDate": "2006-10",
+    "endDate": "2010-07",
+    "location": "Colchester, England",
+    "description": "Supported teaching in databases, information systems and web development while completing doctoral research."
+  },
+  {
+    "id": "essex-phd",
+    "category": "education",
+    "title": "PhD in Computer Science",
+    "org": "University of Essex",
+    "orgUrl": "https://www.essex.ac.uk",
+    "startDate": "2006-10",
+    "endDate": "2011-07",
+    "location": "Colchester, England",
+    "description": "Doctoral research in Formal Software Engineering, with publications in software design, modelling and verification."
+  },
+  {
+    "id": "brighton-pgcert",
+    "category": "education",
+    "title": "PGCert Teaching and Learning in Higher Education (Merit)",
+    "org": "University of Brighton",
+    "orgUrl": "https://www.brighton.ac.uk",
+    "startDate": "2012-01",
+    "endDate": "2013-01",
+    "location": "Brighton, England",
+    "description": "Professional qualification covering higher education teaching, learning and curriculum development."
+  },
+  {
+    "id": "essex-msc",
+    "category": "education",
+    "title": "MSc Computer Science (Distinction)",
+    "org": "University of Essex",
+    "orgUrl": "https://www.essex.ac.uk",
+    "startDate": "2005-09",
+    "endDate": "2006-09",
+    "location": "Colchester, England",
+    "description": "Specialised in Distributed Information Management Systems and graduated with Distinction."
+  },
+  {
+    "id": "essex-bsc",
+    "category": "education",
+    "title": "BSc (Hons) Computer Science (First Class)",
+    "org": "University of Essex",
+    "orgUrl": "https://www.essex.ac.uk",
+    "startDate": "2002-09",
+    "endDate": "2005-06",
+    "location": "Colchester, England",
+    "description": "First-class degree in Computer Science with a focus on software engineering and information systems."
+  }
+]

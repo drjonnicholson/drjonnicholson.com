@@ -1,0 +1,92 @@
+---
+import { getCollection } from "astro:content"
+
+import { PROFILE, SITE } from "@site-config"
+import Layout from "@/layouts/Layout.astro"
+import Section from "@/components/layout/Section.astro"
+import Profile from "@/components/profile/Profile.astro"
+import ExperienceTimeline from "@/components/timeline/ExperienceTimeline.astro"
+import GithubActivity from "@/components/base/GithubActivity.astro"
+import Link from "@/components/base/Link.astro"
+
+import "@/styles/callout.css"
+
+const {
+  home: { careerHighlightCount },
+} = SITE
+
+const careerHighlights = careerHighlightCount > 0 ? await getCollection("experience") : []
+const cvHref = typeof PROFILE.links.cv === "object" ? PROFILE.links.cv?.href : PROFILE.links.cv
+const linkedInHref = typeof PROFILE.links.linkedin === "object" ? PROFILE.links.linkedin?.href : PROFILE.links.linkedin
+const githubProfile = typeof PROFILE.links.github === "object" ? PROFILE.links.github?.href : PROFILE.links.github
+const githubUsername = githubProfile?.replace(/\/$/, "").split("/").pop()
+---
+
+<Layout title="Home">
+  <Profile profile={PROFILE} />
+
+  {careerHighlights.length > 0 && (
+    <Section title="Career highlights" moreLink={cvHref} moreText="see CV →">
+      <ExperienceTimeline entries={careerHighlights} limit={careerHighlightCount} itemClass="home-experience-content" />
+      {linkedInHref && (
+        <p>
+          More on
+          <Link href={linkedInHref} external underline>
+            LinkedIn
+          </Link>
+        </p>
+      )}
+    </Section>
+  )}
+
+  {githubProfile && <GithubActivity githubUrl={githubProfile} />}
+</Layout>
+
+<style>
+  .selected-publications {
+    gap: var(--space-s);
+  }
+
+  .latest-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .latest-posts-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2xs);
+    margin-block-start: var(--space-s);
+  }
+
+  :global(.home-arrow-button span[aria-hidden="true"]) {
+    display: inline-block;
+    transition: transform var(--motion-duration) var(--motion-ease);
+  }
+
+  :global(.home-arrow-button:hover span[aria-hidden="true"]) {
+    transform: translateX(0.25rem);
+  }
+
+  :global(.home-experience-content) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  :global(.home-update-content) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+
+    @media (width >= 48rem) {
+      -webkit-line-clamp: 3;
+    }
+  }
+</style>

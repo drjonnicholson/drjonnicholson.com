@@ -1,0 +1,17 @@
+import type { z } from "astro/zod"
+
+import type { ProcessedPublicationSchema, ProfileConfigSchema, PublicationConfigSchema, SiteConfigSchema, ToolSchema } from "@/schemas"
+
+export type LinkConfig = {
+  href: string
+  label: string
+}
+
+// Used internally
+export type Tool = z.infer<typeof ToolSchema>
+export type ProcessedPublication = z.infer<typeof ProcessedPublicationSchema>
+
+// Used in site config
+export type ProfileConfig = z.infer<typeof ProfileConfigSchema>
+export type PublicationConfig = z.infer<typeof PublicationConfigSchema>
+export type SiteConfig = z.infer<typeof SiteConfigSchema>
