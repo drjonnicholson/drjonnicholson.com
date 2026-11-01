@@ -19,7 +19,6 @@ const careerHighlights = careerHighlightCount > 0 ? await getCollection("experie
 const cvHref = typeof PROFILE.links.cv === "object" ? PROFILE.links.cv?.href : PROFILE.links.cv
 const linkedInHref = typeof PROFILE.links.linkedin === "object" ? PROFILE.links.linkedin?.href : PROFILE.links.linkedin
 const githubProfile = typeof PROFILE.links.github === "object" ? PROFILE.links.github?.href : PROFILE.links.github
-const githubUsername = githubProfile?.replace(/\/$/, "").split("/").pop()
 ---
 
 <Layout title="Home">

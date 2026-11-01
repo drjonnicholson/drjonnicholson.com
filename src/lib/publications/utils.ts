@@ -225,7 +225,11 @@ function inferVenue(pub: Publication): string {
 export function parseBibTeX(bibContent: string): Publication[] {
   try {
     const cite = new Cite(bibContent)
-    const publications: CitationEntry[] = cite.data
+    const publications: CitationEntry[] = cite.data.map((entry) => ({
+      ...entry,
+      id: String(entry.id),
+      issued: entry.issued ? { ...entry.issued, "date-parts": entry.issued["date-parts"]?.map((parts) => parts.map(Number)) } : undefined,
+    }))
 
     return publications.map((entry) => {
       const customFields = extractCustomFields(entry)

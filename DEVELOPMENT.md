@@ -59,8 +59,7 @@ Use `npm routine` for the standard pre-PR local pass.
 - Experience is defined in `src/content/experience.json`.
 - Publications are loaded from BibTeX at `src/content/publications/main.bib`.
 
-Do not introduce MDX unless the feature genuinely needs component islands inside content. If MDX is needed, document the reason and update install/customization
-docs.
+Do not introduce MDX unless the feature genuinely needs component islands inside content. If MDX is needed, document the reason and update install/customization docs.
 
 ## CSS rules
 

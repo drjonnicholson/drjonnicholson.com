@@ -20,13 +20,6 @@ interface Props {
 
 const { pub, filterableTags = true } = Astro.props
 const hiddenAuthorsId = `publication-${slugify(pub.title)}-${pub.year ?? "unknown"}-authors`
-if (pub.file) {
-  pub.links.push({
-    label: "PDF",
-    href: `/publications/${pub.file}`,
-    icon: "file",
-  })
-}
 ---
 
 <Card
