@@ -9,21 +9,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-
-      - uses: actions/setup-node@v7.1.0
-        with:
-          node-version: 26
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-  quality:
-    needs: setup
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
@@ -45,28 +31,11 @@ jobs:
       - name: Style architecture
         run: npm run lint:styles
 
-  test:
-    needs: quality
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-
-      - uses: actions/setup-node@v7.1.0
-        with:
-          node-version: 26
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
       - name: Markdown plugins
         run: npm run test:markdown
 
       - name: Type check
         run: npm run astro check
-
-      - name: Build
-        run: npm run build
 
   deploy:
     needs: test
@@ -93,6 +62,6 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: dist/*
-          remote_path: /httpdocs
+          remote_path: /httpdocs/*
           delete_remote_files: true
           sftpArgs: "-o ConnectTimeout=5"
