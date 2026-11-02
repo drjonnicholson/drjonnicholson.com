@@ -93,6 +93,6 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: dist/*
-          remote_path: /httpdocs/testing
+          remote_path: /httpdocs
           delete_remote_files: true
           sftpArgs: "-o ConnectTimeout=5"
