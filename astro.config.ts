@@ -10,6 +10,8 @@ import { headingAnchors } from "./src/lib/heading-anchors"
 import { satteriSidenotes } from "./src/plugins/satteri-sidenotes"
 import { normalizeHeadings } from "./src/plugins/satteri-normalize-headings"
 
+import mdx from "@astrojs/mdx"
+
 export default defineConfig({
   site: "https://www.drjonnicholson.com",
   compressHTML: false,
@@ -21,7 +23,7 @@ export default defineConfig({
     layout: "constrained",
     remotePatterns: [{ protocol: "data" }, { protocol: "https", hostname: "gravatar.com" }],
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), mdx()],
   server: { port: 4321, host: true },
   devToolbar: { enabled: false },
   markdown: {

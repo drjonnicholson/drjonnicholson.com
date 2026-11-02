@@ -10,7 +10,7 @@ import { dedupPreserveCase } from "@/lib/string-manipulation"
 const yearMonthDateSchema = z.union([z.date(), z.string().transform(createLocalDate)]).describe("Should be valid YYYY-MM format.")
 
 const projects = defineCollection({
-  loader: glob({ base: "./src/content/projects", pattern: "**/!(*README).md" }),
+  loader: glob({ base: "./src/content/projects", pattern: "**/!(*README).{md,mdx}" }),
   schema: z
     .object({
       title: z.string().max(75),

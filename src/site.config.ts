@@ -61,7 +61,7 @@ export const PROFILE: ProfileConfig = {
 
 export const NAV_LINKS: LinkConfig[] = [
   { href: "/publications", label: "Publications" },
-  // { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Projects" },
 ]
 
 export const NAVIGATION: LinkConfig[] = NAV_LINKS.map(({ href, label }) => ({
