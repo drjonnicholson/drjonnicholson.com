@@ -42,6 +42,9 @@ const footerLinks = getProfileLinkPlacement("footer")
       and
       <Link href="/palette" class="footer-link"> Colour Palette. </Link>
     </p>
+    <p>
+      <button type="button" class="footer-link" data-dc-cookie-preferences>Cookie settings</button>
+    </p>
   </div>
 </footer>
 
@@ -78,6 +81,10 @@ const footerLinks = getProfileLinkPlacement("footer")
 
   .footer-link {
     color: var(--foreground);
+  }
+
+  button.footer-link:hover {
+    color: var(--accent);
   }
 
   .footer-muted-link {

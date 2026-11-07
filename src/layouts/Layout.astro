@@ -9,6 +9,7 @@ import Header from "@/components/layout/Header.astro"
 import MenuBar from "@/components/layout/MenuBar.astro"
 import Breadcrumbs, { type BreadcrumbItem } from "@/components/layout/Breadcrumbs.astro"
 import { GoogleTagmanagerNoscript } from "@digi4care/astro-google-tagmanager"
+import { CookieConsent, createDefaultConsentConfig } from "@digital-craft/astro-cookie-consent"
 
 interface Props {
   class?: string
@@ -26,6 +27,31 @@ interface Props {
 }
 
 const { class: className, title, description, image, noindex, type, publishedTime, modifiedTime, author, tags, section, breadcrumbs } = Astro.props
+
+const cookieConsentConfig = createDefaultConsentConfig({
+  privacyPolicyUrl: "/privacy",
+})
+
+// Remove the "ads" category from the preferences modal sections
+cookieConsentConfig.categories = {
+  necessary: { readOnly: true },
+  analytics: {
+    autoClear: {
+      cookies: [{ name: { pattern: "^_ga", flags: "i" } }, { name: "_gid" }, { name: "_gat" }],
+    },
+  },
+}
+const en = cookieConsentConfig.language.translations.en as {
+  consentModal: {
+    description: string
+  }
+  preferencesModal: {
+    sections: Array<{ linkedCategory?: string }>
+  }
+}
+en.consentModal.description =
+  "This is a personal website. With your permission, I'd like to use analytics cookies to understand which content visitors find useful."
+en.preferencesModal.sections = en.preferencesModal.sections.filter((section) => section.linkedCategory !== "ads")
 ---
 
 <!doctype html>
@@ -89,6 +115,7 @@ const { class: className, title, description, image, noindex, type, publishedTim
       observeHeaderHeight()
       document.addEventListener("astro:after-swap", observeHeaderHeight)
     </script>
+    <CookieConsent config={cookieConsentConfig} googleConsentMode />
   </body>
 </html>
 

@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions"
 import { GoogleTagmanager, SiteVerification } from "@digi4care/astro-google-tagmanager"
+import { ConsentModeDefaults } from "@digital-craft/astro-cookie-consent"
 
 import { PROFILE, SITE } from "@site-config"
 
@@ -144,7 +145,10 @@ const structuredData = {
   <link rel="sitemap" href="/sitemap-index.xml">
 
   {SITE.gtmVerificationId && <SiteVerification id={SITE.gtmVerificationId} />}
-  {SITE.gtmId && <GoogleTagmanager id={SITE.gtmId} />}
+  {SITE.gtmId && (
+      <ConsentModeDefaults />
+      <GoogleTagmanager id={SITE.gtmId} />
+  )}
 
   <ClientRouter />
 

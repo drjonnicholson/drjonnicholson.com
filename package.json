@@ -46,6 +46,7 @@
     "@citation-js/plugin-bibtex": "^0.9.0",
     "@date-fns/tz": "^1.5.0",
     "@digi4care/astro-google-tagmanager": "^2.1.0",
+    "@digital-craft/astro-cookie-consent": "^0.1.0",
     "@expressive-code/plugin-collapsible-sections": "^0.42.0",
     "@expressive-code/plugin-line-numbers": "^0.42.0",
     "@iconify-json/academicons": "^1.2.4",
